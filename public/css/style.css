@@ -38,3 +38,23 @@ button {
 button:hover {
     background: #444;
 }
+.footer-section {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+.footer-section div, .class-box {
+    background-color: #005f2f;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+.section h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #b3e5d1;
+}

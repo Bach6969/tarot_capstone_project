@@ -6,14 +6,14 @@ async function drawCard(cardNumber) {
         let data = await response.json();
         let card = data.cards[0];
 
-        document.getElementById('title${cardNumber}').innerText = card.name;
-        document.getElementById('desc${cardNumber}').innerText = card.meaning;
+        document.getElementById(`title${cardNumber}`).innerText = card.name;
+        document.getElementById(`desc${cardNumber}`).innerText = card.desc;
     } catch (error) {
         console.error("Error fetching tarot card;", error);
     }
 }
 
 function shuffleCard(cardNumber) {
-    document.getElementById('title${cardNumber}').innerText = "card title";
-    document.getElementById('desc${cardNumber}').innerText = "description";
+    document.getElementById(`title${cardNumber}`).innerText = "card title";
+    document.getElementById(`desc${cardNumber}`).innerText = "description";
 }
