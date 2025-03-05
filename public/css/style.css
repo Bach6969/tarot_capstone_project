@@ -1,3 +1,5 @@
+/* any copy pasted code is from my original projects on other sources that I've taken snippets of code from */
+
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -13,8 +15,15 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+.desc {
+    height: 300px;
+    overflow: auto;
+    padding: 10px;
+    text-align: justify;
+}
 .cards {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     margin-top: 20px;
 }
@@ -23,7 +32,6 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    width: 30%;
     margin: 5px;
 }
 button {
@@ -39,10 +47,12 @@ button:hover {
     background: #444;
 }
 .footer-section {
-    grid-column: 1 / -1;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
     padding: 20px 0;
+    width: 100%;
+    flex-direction: column;
 }
 .footer-section div, .class-box {
     background-color: #005f2f;
@@ -50,11 +60,43 @@ button:hover {
     padding: 15px;
     border-radius: 5px;
     text-align: center;
-    flex: 1;
-    margin: 0 10px;
+    width: 80%;
+    margin: 10px 0;
 }
 .section h3 {
     margin-top: 0;
     font-size: 1.2em;
     color: #b3e5d1;
+}
+.info-icon {
+    margin-top: 10px;
+    background-color: #222;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+}
+.card:hover .info-icon {
+    background-color: #444;  
+}
+.info-icon[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 40px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    width: 200px; 
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
