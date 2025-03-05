@@ -8,6 +8,7 @@ async function drawCard(cardNumber) {
 
         document.getElementById(`title${cardNumber}`).innerText = card.name;
         document.getElementById(`desc${cardNumber}`).innerText = card.desc;
+        document.getElementById(`info-icon${cardNumber}`).setAttribute('data-tooltip', card.meaning_up);
     } catch (error) {
         console.error("Error fetching tarot card;", error);
     }
