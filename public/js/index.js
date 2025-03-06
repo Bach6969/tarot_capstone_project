@@ -1,6 +1,9 @@
 "use strict";
 
 async function drawCard(cardNumber) {
+    let desc = document.getElementById(`desc${cardNumber}`);
+    desc.innerText = "Shuffling...";
+    
     try {
         let response = await fetch('https://tarotapi.dev/api/v1/cards/random');
         let data = await response.json();
