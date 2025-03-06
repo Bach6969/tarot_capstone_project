@@ -3,7 +3,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    background-color: #d7c5a5;
+    background-color: #d6c89c;
     margin: 0;
     padding: 20px;
     display: flex;
@@ -13,10 +13,8 @@ body {
 .tarot-container {
     max-width: 800px;
     margin:auto;
-    background: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,12 +22,22 @@ body {
 }
 .desc {
     height: 300px;
-    width: 300px;
+    width: 350px;
     background: #fff;
     overflow: auto;
     padding: 10px;
     margin-top: 10px;
     text-align: justify;
+}
+.desc::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 1px; /* Rounded scrollbar */
+}
+.desc::-webkit-scrollbar {
+    width: 10px; /* Fixed size scrollbar */
+}
+.desc::-webkit-scrollbar-track {
+    background-color: transparent; /* Transparent track */
 }
 .cards {
     display: flex;
@@ -38,16 +46,20 @@ body {
     margin-top: 20px;
 }
 .card {
-    background-image: url("/tarot_capstone_project/public/img/3.png");  
+    background-image: url("../img/3.png");  
     background-size: cover;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     margin: 5px;
+    transition: transform 0.5s ease;
+}
+.card:hover {
+    transform: rotateY(10deg);
 }
 button {
-    background: #222;
-    color: #fff;
+    background: #ffcf40;
+    color: #000;
     border: none;
     padding: 10px;
     margin-top: 10px;
@@ -55,7 +67,7 @@ button {
     border-radius: 5px;
 }
 button:hover {
-    background: #444;
+    background: #fcde85;
 }
 .footer-section {
     display: flex;
@@ -66,8 +78,7 @@ button:hover {
     flex-direction: column;
 }
 .footer-section div, .class-box {
-    background-color: #005f2f;
-    color: #fff;
+    background-color: #000000;
     padding: 15px;
     border-radius: 5px;
     text-align: center;
@@ -77,19 +88,35 @@ button:hover {
     transition: background-color 0.3s;
 }
 .footer-section div:hover {
-    background-color: #007f4f;
+    background-color: #292929;
 }
 .footer-section div a {
-    color: #fff;
+    color: #ffcf40;
     text-decoration: none;
     display: block;
     width: 100%;
     height: 100%;
 }
-.section h3 {
+h1 {
     margin-top: 0;
-    font-size: 1.2em;
-    color: #b3e5d1;
+    font-size: 2em;
+    color: #000000;
+    text-transform: uppercase;
+    font-family: "DM Serif Text", serif;
+}
+h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #ffcf40;
+    font-family: "DM Serif Text", serif;
+}
+h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #000000;
+    background-color: #ffcf40;
+    padding: 15px;
+    font-family: "DM Serif Text", serif;
 }
 .info-icon {
     margin-top: 10px;
@@ -123,3 +150,32 @@ button:hover {
     font-size: 14px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+  /* Large Screens (Desktop) */
+  @media (min-width: 1000px) {
+    .tarot-container {
+        flex-direction: row;
+        padding: 40px;
+    }
+    .desc {
+        height: 150px;
+        width: 150px;
+        margin-top: 0;
+    }
+    .cards {
+        flex-direction: row;
+    }
+    .card {
+        width: 200px;
+        height: 300px;
+    }
+    .footer-section {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .footer-section div, .class-box {
+        width: 40%;
+    }
+    .info-icon {
+        margin-top: 0;
+    }
+  }
