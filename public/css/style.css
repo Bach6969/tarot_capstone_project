@@ -24,6 +24,7 @@ body {
 }
 .desc {
     height: 300px;
+    width: 300px;
     background: #fff;
     overflow: auto;
     padding: 10px;
@@ -37,7 +38,8 @@ body {
     margin-top: 20px;
 }
 .card {
-    background: #e6a5a5;
+    background-image: url("/tarot_capstone_project/public/img/3.png");  
+    background-size: cover;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
