@@ -153,27 +153,28 @@ h3 {
   /* Large Screens (Desktop) */
   @media (min-width: 1000px) {
     .tarot-container {
-        flex-direction: row;
         padding: 40px;
     }
     .desc {
         height: 150px;
-        width: 150px;
+        width: 100%;
+        max-width: 350px;
         margin-top: 0;
+        text-align: justify;
     }
     .cards {
         flex-direction: row;
     }
     .card {
-        width: 200px;
-        height: 300px;
+        width: 250px;
+        height: 350px;
     }
     .footer-section {
         flex-direction: row;
         justify-content: space-around;
     }
     .footer-section div, .class-box {
-        width: 40%;
+        
     }
     .info-icon {
         margin-top: 0;
