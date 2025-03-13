@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Card Tarot Spread</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="tarot-container">
+    <h1>Five Card Tarot Spread</h1>
+    <div class="cards">
+        <div class="card" id="card1">
+            <h3 id="title1">Card Title</h3>
+            <button onclick="drawCard(1)">Draw Card</button>
+            <button onclick="shuffleCard(1)">Shuffle Card</button>
+            <div class="desc"><p id="desc1">Card Description</p></div>
+            <div class="info-icon" id="info-icon1">?</div>
+        </div>
+        <div class="card" id="card2">
+            <h3 id="title2">Card Title</h3>
+            <button onclick="drawCard(2)">Draw Card</button>
+            <button onclick="shuffleCard(2)">Shuffle Card</button>
+            <div class="desc"><p id="desc2">Card Description</p></div>
+            <div class="info-icon" id="info-icon2">?</div>
+        </div>
+        <div class="card" id="card3">
+            <h3 id="title3">Card Title</h3>
+            <button onclick="drawCard(3)">Draw Card</button>
+            <button onclick="shuffleCard(3)">Shuffle Card</button>
+            <div class="desc"><p id="desc3">Card Description</p></div>
+            <div class="info-icon" id="info-icon3">?</div>
+        </div>
+        <div class="card" id="card3">
+            <h3 id="title3">Card Title</h3>
+            <button onclick="drawCard(3)">Draw Card</button>
+            <button onclick="shuffleCard(3)">Shuffle Card</button>
+            <div class="desc"><p id="desc3">Card Description</p></div>
+            <div class="info-icon" id="info-icon3">?</div>
+        </div>
+        <div class="card" id="card3">
+            <h3 id="title3">Card Title</h3>
+            <button onclick="drawCard(3)">Draw Card</button>
+            <button onclick="shuffleCard(3)">Shuffle Card</button>
+            <div class="desc"><p id="desc3">Card Description</p></div>
+            <div class="info-icon" id="info-icon3">?</div>
+        </div>
+    </div>
+    <button id="export-btn" onclick="exportCardInfo()">Export Card Info</button>
+    <div class="info-area">
+        <p>A five-card tarot spread is a versatile layout that offers deeper insight into a situation than a three-card spread while remaining more concise than larger spreads like the Celtic Cross. This spread can be used for various topics, such as relationships, career decisions, or personal growth. The five cards are typically arranged in a specific pattern, with each position holding a distinct meaning. The exact layout may vary depending on the reader’s intention, but a common structure includes past influences, present circumstances, hidden challenges, advice, and potential outcome.</p>
+        <p>Each card in the five-card spread plays a crucial role in understanding the bigger picture. The first card represents the past, highlighting events or influences leading up to the current situation. The second card reflects the present, showing the energy or circumstances currently at play. The third card reveals hidden challenges, subconscious factors, or obstacles that may not be immediately obvious. The fourth card provides advice, suggesting possible actions or perspectives that could help navigate the situation. Finally, the fifth card represents the potential outcome, indicating where things may lead if current energies and actions remain unchanged.</p>
+        <p>The five-card tarot spread is useful for both beginners and experienced readers because it offers a well-rounded but manageable amount of information. It allows for a nuanced exploration of a situation while remaining focused and clear. Readers can adjust the spread to suit different questions by modifying the card positions, such as using them to represent different perspectives in a conflict or different possible paths in a decision-making process. This flexibility makes the five-card spread a powerful tool for gaining clarity and insight into life’s many complexities.</p>
+    </div>
+    <div class="footer-section">
+        <div>
+            <h2><a href="../public/index.html">3-Card Spread</a></h2>
+        </div>
+        <div>
+            <h2><a href="../public/three.html">5-Card Spread</a></h2>
+        </div>
+        <div>
+            <h2><a href="../public/two.html">1-Card Daily Pull</a></h2>
+        </div>
+ 
+    </div>
+</div>
+
+
+
+
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
