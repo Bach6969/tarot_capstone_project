@@ -14,6 +14,7 @@ async function drawCard(cardNumber) {
         document.getElementById(`info-icon${cardNumber}`).setAttribute('data-tooltip', card.meaning_up);
     } catch (error) {
         console.error("Error fetching tarot card;", error);
+        desc.innerText = "Error fetching card. Please try again";
     }
 }
 
