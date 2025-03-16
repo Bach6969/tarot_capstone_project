@@ -130,7 +130,6 @@ h3 {
     justify-content: center;
     cursor: pointer;
     font-size: 18px;
-    position: relative;
 }
 .card:hover .info-icon {
     background-color: #f3d681;  
