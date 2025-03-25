@@ -1,6 +1,6 @@
 # tarot_capstone_project
 
-My project brings tarot card reading and simplifies it down for anyone to use.
+My project makes tarot card reading more accessible by simplifying the process, allowing anyone to engage with it regardless of their prior knowledge or experience. By creating an intuitive and user-friendly interface, the platform removes the complexity often associated with traditional tarot readings, making it easy for users to draw cards, interpret their meanings, and gain insights in a straightforward and engaging way.
 
 **Requirements**  
 
