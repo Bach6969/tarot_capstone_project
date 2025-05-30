@@ -38,15 +38,16 @@ header h1 {
 
 .draw-options a {
   padding: 0.75rem 1.5rem;
-  background: #de8a5c;
-  color: #223149;
+  background: linear-gradient(180deg, #de8a5c, #654936);
+  color: #000000;
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.3s;
 }
 
 .draw-options a:hover {
-  background: #eee5ca;
+  background: linear-gradient(180deg, #000000, #282c63);
+  color: #d07e47;
 }
 
 .guide {
@@ -57,11 +58,74 @@ header h1 {
 }
 
 .guide h2 {
-  color: #de8a5c;
+  color: #8f5682;
 }
 
 footer {
   margin-top: 3rem;
   font-size: 0.9rem;
-  color: #eee5ca;
+  color: #8f5682;
+}
+
+.slider-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1;
+  margin: 0 10px;
+  text-align: ;
+}
+
+.title {
+  font-size: 18px;
+  color: #3d7c8a;
+  margin-bottom: 10px;
+}
+
+#tip-title {
+  color: #924b72;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #3d7c8a;
+}
+
+.arrow:hover {
+  color: #924b72;
+}
+
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.pagination-dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #3d7c8a;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: white;
+}
+
+.pagination-dot.active {
+  background-color: #3d7c8a;
 }
