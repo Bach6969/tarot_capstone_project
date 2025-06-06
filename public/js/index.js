@@ -1,5 +1,7 @@
 "use strict";
 
+const cardPile = document.getElementById('cardPile');
+
 async function drawCard(cardNumber) {
     let desc = document.getElementById(`desc${cardNumber}`);
     desc.innerText = "Shuffling...";
@@ -19,6 +21,7 @@ async function drawCard(cardNumber) {
 }
 
 function shuffleCard(cardNumber) {
+    shuffleCards();
     document.getElementById(`title${cardNumber}`).innerText = "card title";
     document.getElementById(`desc${cardNumber}`).innerText = "description";
     document.getElementById(`info-icon${cardNumber}`).removeAttribute('data-tooltip');
@@ -44,9 +47,38 @@ function exportCardInfo(){
 }
 
 window.onload = function() {
-    let exportButton = document.getElementById('export-button');
+    let exportButton = document.getElementById('export-btn');
     exportButton.innerText = "Export Spread";
     exportButton.onclick = exportCardInfo;
     exportButton.style.marginTop = "100px";
     document.querySelector(".tarot-container").appendChild(exportButton);
+}
+
+// Create 22 cards dynamically
+for (let i = 1; i <= 22; i++) {
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.style.top = `${i * 0.5}px`; // slight stacking effect
+  card.style.zIndex = 22 - i;
+  cardPile.appendChild(card);
+}
+
+// Select all cards
+const cards = document.querySelectorAll('.card');
+
+// Shuffle animation
+function shuffleCards() {
+  cards.forEach(card => {
+    const randomX = Math.random() * 40 - 20; // move -20px to 20px
+    const randomY = Math.random() * 40 - 20;
+    const randomRotate = Math.random() * 20 - 10;
+    card.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`;
+  });
+
+  // Reset to stack after a short delay
+  setTimeout(() => {
+    cards.forEach(card => {
+      card.style.transform = 'translate(0, 0) rotate(0)';
+    });
+  }, 500);
 }

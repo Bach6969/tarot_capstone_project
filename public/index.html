@@ -14,6 +14,7 @@
 <div class="tarot-container">
     <h1>Three Card Tarot Spread</h1>
     <div class="cards">
+        <div class="card-pile" id="cardPile">
         <div class="card" id="card1">
             <h3 id="title1">Card Title</h3>
             <button onclick="drawCard(1)">Draw Card</button>
@@ -21,6 +22,8 @@
             <div class="desc"><p id="desc1">Card Description</p></div>
             <div class="info-icon" id="info-icon1">?</div>
         </div>
+        </div>
+        <div class="card-pile" id="cardPile">
         <div class="card" id="card2">
             <h3 id="title2">Card Title</h3>
             <button onclick="drawCard(2)">Draw Card</button>
@@ -28,6 +31,8 @@
             <div class="desc"><p id="desc2">Card Description</p></div>
             <div class="info-icon" id="info-icon2">?</div>
         </div>
+        </div>
+        <div class="card-pile" id="cardPile">
         <div class="card" id="card3">
             <h3 id="title3">Card Title</h3>
             <button onclick="drawCard(3)">Draw Card</button>
@@ -35,8 +40,9 @@
             <div class="desc"><p id="desc3">Card Description</p></div>
             <div class="info-icon" id="info-icon3">?</div>
         </div>
+        </div>
     </div>
-    <button id="export-btn" onclick="exportCardInfo()">Export Card Info</button>
+    <button name = "export-btn" id="export-btn" onclick="exportCardInfo()">Export Card Info</button>
     <div class="info-area">
         <p>The 3-Card Past/Present/Future tarot spread is one of the simplest and most popular ways to get insight into a situation. Each card represents a different time frame: the past influences that shaped your current situation, the present circumstances you’re dealing with, and the future possibilities based on your current path. This spread is great for beginners because it gives a clear, straightforward look at how things are progressing.</p>
         <p>The past card reveals past events, experiences, or energies that have contributed to your current situation. It helps you understand what lessons you've learned or what patterns might be repeating. The present card represents your current state—your emotions, challenges, or influences happening right now. It shows where you stand and what you need to focus on. The future card offers a glimpse into what may come based on your current trajectory. It’s not set in stone, but it provides guidance on what to expect or how to change your path if needed.</p>
