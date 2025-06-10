@@ -82,3 +82,4 @@ function shuffleCards() {
     });
   }, 500);
 }
+
