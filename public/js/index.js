@@ -54,15 +54,6 @@ window.onload = function() {
     document.querySelector(".tarot-container").appendChild(exportButton);
 }
 
-// Create 22 cards dynamically
-for (let i = 1; i <= 22; i++) {
-  const card = document.createElement('div');
-  card.classList.add('card');
-  card.style.top = `${i * 0.5}px`; // slight stacking effect
-  card.style.zIndex = 22 - i;
-  cardPile.appendChild(card);
-}
-
 // Select all cards
 const cards = document.querySelectorAll('.card');
 
