@@ -29,7 +29,7 @@ body {
 .desc {
     height: 300px;
     width: 350px;
-    background: rgba(255, 207, 64, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     overflow: auto;
     padding: 10px;
     margin-top: 10px;
@@ -52,7 +52,7 @@ body {
     margin-top: 20px;
 }
 .card {
-    background-image: url("../img/3.png");  
+    background-image: url("../img/sun\ moon.jpg");  
     background-size: cover;
     padding: 20px;
     border-radius: 10px;

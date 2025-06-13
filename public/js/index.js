@@ -51,26 +51,26 @@ window.onload = function() {
     exportButton.innerText = "Export Spread";
     exportButton.onclick = exportCardInfo;
     exportButton.style.marginTop = "100px";
-    document.querySelector(".tarot-container").appendChild(exportButton);
 }
 
-// Select all cards
-const cards = document.querySelectorAll('.card');
+function shuffleCard(cardNumber) {
+    const card = document.getElementById(`card${cardNumber}`);
 
-// Shuffle animation
-function shuffleCards() {
-  cards.forEach(card => {
+    // Run shuffle animation only on this specific card
     const randomX = Math.random() * 40 - 20; // move -20px to 20px
     const randomY = Math.random() * 40 - 20;
     const randomRotate = Math.random() * 20 - 10;
     card.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`;
-  });
 
-  // Reset to stack after a short delay
-  setTimeout(() => {
-    cards.forEach(card => {
-      card.style.transform = 'translate(0, 0) rotate(0)';
-    });
-  }, 500);
+    // Reset to stack after a short delay
+    setTimeout(() => {
+        card.style.transform = 'translate(0, 0) rotate(0)';
+    }, 500);
+
+    // Reset card info
+    document.getElementById(`title${cardNumber}`).innerText = "card title";
+    document.getElementById(`desc${cardNumber}`).innerText = "description";
+    document.getElementById(`info-icon${cardNumber}`).removeAttribute('data-tooltip');
 }
+
 
