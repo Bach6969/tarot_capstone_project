@@ -37,7 +37,7 @@ body {
     text-align: justify;
 }
 .desc::-webkit-scrollbar-thumb {
-    background-color: #000;
+    background-color: #654936;
     border-radius: 1px; /* Rounded scrollbar */
 }
 .desc::-webkit-scrollbar {
@@ -121,6 +121,7 @@ h3 {
     margin-top: 0;
     font-size: 1.5em;
     color: #000000;
+    border-radius: 5px;
     background: linear-gradient(180deg, #de8a5c, #654936);
     padding: 15px;
     font-family: "DM Serif Text", serif;
@@ -128,6 +129,7 @@ h3 {
 .info-icon {
     background: linear-gradient(180deg, #de8a5c, #654936);
     border-radius: 50%;
+    margin-top: -10px;
     width: 30px;
     height: 30px;
     display: flex;
