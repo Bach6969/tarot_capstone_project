@@ -27,31 +27,37 @@ function shuffleCard(cardNumber) {
     document.getElementById(`info-icon${cardNumber}`).removeAttribute('data-tooltip');
 }
 
-function exportCardInfo(){
-    let cardData = "Tarot Spread\n\n";
-    for (let i = 1; i <= 3; i++){
-        let title = document.getElementById(`title${i}`).innerText;
-        let desc = document.getElementById(`desc${i}`).innerText;
-        let meaning = document.getElementById(`info-icon${i}`).getAttribute('data-tooltip') || "No meaning available";
+async function exportCardInfo() {
+    const { jsPDF } = window.jspdf;
 
-        cardData += `Card ${i}: ${title}\nDescription: ${desc}\nMeaning: ${meaning}\n\n`;
-    }
+    const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'px',
+        format: 'a4'
+    });
 
-    let blob = new Blob([cardData], { type: 'text/plain' });
-    let a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'tarot_spread.txt';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    const tarotContainer = document.querySelector('.tarot-container');
+
+    await html2canvas(tarotContainer, {
+        scale: 2,
+        backgroundColor: 'black',
+    }).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+
+        const imgProps = pdf.getImageProperties(imgData);
+        const imgWidth = pageWidth * 0.95;
+        const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+        const x = (pageWidth - imgWidth) / 2;
+        const y = 20;
+
+        pdf.addImage(imgData, 'PNG', x, y, imgWidth, imgHeight);
+        pdf.save('Tarot_Spread.pdf');
+    });
 }
 
-window.onload = function() {
-    let exportButton = document.getElementById('export-btn');
-    exportButton.innerText = "Export Spread";
-    exportButton.onclick = exportCardInfo;
-    exportButton.style.marginTop = "100px";
-}
 
 function shuffleCard(cardNumber) {
     const card = document.getElementById(`card${cardNumber}`);
