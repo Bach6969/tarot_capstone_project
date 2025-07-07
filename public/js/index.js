@@ -29,35 +29,66 @@ function shuffleCard(cardNumber) {
 
 async function exportCardInfo() {
     const { jsPDF } = window.jspdf;
-
     const pdf = new jsPDF({
         orientation: 'portrait',
         unit: 'px',
         format: 'a4'
     });
 
-    const tarotContainer = document.querySelector('.tarot-container');
+    let yPosition = 30;
+    pdf.setFont("times", "bold");
+    pdf.setFontSize(18);
+    pdf.text("Three Card Tarot Spread", 30, yPosition);
+    yPosition += 30;
 
-    await html2canvas(tarotContainer, {
-        scale: 2,
-        backgroundColor: 'black',
-    }).then(canvas => {
-        const imgData = canvas.toDataURL('image/png');
-        const pageWidth = pdf.internal.pageSize.getWidth();
-        const pageHeight = pdf.internal.pageSize.getHeight();
+    // Export cards info
+    for (let i = 1; i <= 3; i++) {
+        const title = document.getElementById(`title${i}`).innerText;
+        const desc = document.getElementById(`desc${i}`).innerText;
+        const tooltip = document.getElementById(`info-icon${i}`).getAttribute('data-tooltip') || "None";
 
-        const imgProps = pdf.getImageProperties(imgData);
-        const imgWidth = pageWidth * 0.95;
-        const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+        pdf.setFont("times", "bold");
+        pdf.setFontSize(16);
+        pdf.text(`Card ${i}: ${title}`, 30, yPosition);
+        yPosition += 20;
 
-        const x = (pageWidth - imgWidth) / 2;
-        const y = 20;
+        pdf.setFont("times", "normal");
+        pdf.setFontSize(12);
+        pdf.text(`Description: ${desc}`, 30, yPosition, { maxWidth: 500 });
+        yPosition += 60;
 
-        pdf.addImage(imgData, 'PNG', x, y, imgWidth, imgHeight);
-        pdf.save('Tarot_Spread.pdf');
+        pdf.text(`Tooltip Meaning: ${tooltip}`, 30, yPosition, { maxWidth: 500 });
+        yPosition += 40;
+    }
+
+    // Export info-area text
+    const infoAreaText = document.querySelector('.info-area').innerText;
+    pdf.setFont("times", "bold");
+    pdf.setFontSize(16);
+    pdf.text("About the Spread", 30, yPosition);
+    yPosition += 20;
+
+    pdf.setFont("times", "normal");
+    pdf.setFontSize(12);
+    const lines = pdf.splitTextToSize(infoAreaText, 500);
+    pdf.text(lines, 30, yPosition);
+    yPosition += lines.length * 15;
+
+    // Export footer links
+    pdf.addPage();
+    pdf.setFont("times", "bold");
+    pdf.setFontSize(16);
+    pdf.text("Navigation Links", 30, 30);
+
+    document.querySelectorAll('.footer-section div a').forEach((link, idx) => {
+        const text = `${idx + 1}. ${link.innerText}: ${link.getAttribute('href')}`;
+        pdf.setFont("times", "normal");
+        pdf.setFontSize(12);
+        pdf.text(text, 30, 60 + idx * 20);
     });
-}
 
+    pdf.save('Tarot_Spread_Full.pdf');
+}
 
 function shuffleCard(cardNumber) {
     const card = document.getElementById(`card${cardNumber}`);

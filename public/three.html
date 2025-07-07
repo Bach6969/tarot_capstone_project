@@ -14,45 +14,68 @@
 <div class="tarot-container">
     <h1>Five Card Tarot Spread</h1>
     <div class="cards">
+        <div class="card-pile" id="cardPile1">
         <div class="card" id="card1">
             <h3 id="title1">Card Title</h3>
-            <button onclick="drawCard(1)">Draw Card</button>
-            <button onclick="shuffleCard(1)">Shuffle Card</button>
+            <div class="action-row">
+                <button onclick="drawCard(1)">Draw Card</button>
+                <button onclick="shuffleCard(1)">Shuffle Card</button>
+                <div class="info-icon" id="info-icon1">❔</div>
+            </div>
             <div class="desc"><p id="desc1">Card Description</p></div>
-            <div class="info-icon" id="info-icon1">?</div>
         </div>
+    </div>
+        <div class="card-pile" id="cardPile2">
         <div class="card" id="card2">
             <h3 id="title2">Card Title</h3>
-            <button onclick="drawCard(2)">Draw Card</button>
-            <button onclick="shuffleCard(2)">Shuffle Card</button>
+            <div class="action-row">
+                <button onclick="drawCard(2)">Draw Card</button>
+                <button onclick="shuffleCard(2)">Shuffle Card</button>
+                <div class="info-icon" id="info-icon2">❔</div>
+            </div>
             <div class="desc"><p id="desc2">Card Description</p></div>
-            <div class="info-icon" id="info-icon2">?</div>
         </div>
     </div>
+</div>
     <div class="cards">
+        <div class="card-pile" id="cardPile3">
         <div class="card" id="card3">
             <h3 id="title3">Card Title</h3>
-            <button onclick="drawCard(3)">Draw Card</button>
-            <button onclick="shuffleCard(3)">Shuffle Card</button>
+            <div class="action-row">
+                <button onclick="drawCard(2)">Draw Card</button>
+                <button onclick="shuffleCard(2)">Shuffle Card</button>
+                <div class="info-icon" id="info-icon2">❔</div>
+            </div>
             <div class="desc"><p id="desc3">Card Description</p></div>
-            <div class="info-icon" id="info-icon3">?</div>
-        </div>
-        <div class="card" id="card4">
-            <h3 id="title4">Card Title</h3>
-            <button onclick="drawCard(4)">Draw Card</button>
-            <button onclick="shuffleCard(4)">Shuffle Card</button>
-            <div class="desc"><p id="desc4">Card Description</p></div>
-            <div class="info-icon" id="info-icon4">?</div>
-        </div>
-        <div class="card" id="card5">
-            <h3 id="title5">Card Title</h3>
-            <button onclick="drawCard(5)">Draw Card</button>
-            <button onclick="shuffleCard(5)">Shuffle Card</button>
-            <div class="desc"><p id="desc5">Card Description</p></div>
-            <div class="info-icon" id="info-icon5">?</div>
         </div>
     </div>
+        <div class="card-pile" id="cardPile4">
+            <div class="card" id="card4">
+            <h3 id="title4">Card Title</h3>
+            <div class="action-row">
+                <button onclick="drawCard(4)">Draw Card</button>
+                <button onclick="shuffleCard(4)">Shuffle Card</button>
+                <div class="info-icon" id="info-icon4">❔</div>
+            </div>
+            <div class="desc"><p id="desc4">Card Description</p></div>
+        </div>
+    </div>
+        <div class="card-pile" id="cardPile5">
+        <div class="card" id="card5">
+            <h3 id="title5">Card Title</h3>
+            <div class="action-row">
+                <button onclick="drawCard(5)">Draw Card</button>
+                <button onclick="shuffleCard(5)">Shuffle Card</button>
+                <div class="info-icon" id="info-icon5">❔</div>
+            </div>
+            <div class="desc"><p id="desc5">Card Description</p></div>
+        </div>
+    </div>
+</div>
     <button id="export-btn" onclick="exportCardInfo()">Export Card Info</button>
+
+    <h1>About the Spread</h1>
+    <div class="info-footer-container">
     <div class="info-area">
         <p>A five-card tarot spread is a versatile layout that offers deeper insight into a situation than a three-card spread while remaining more concise than larger spreads like the Celtic Cross. This spread can be used for various topics, such as relationships, career decisions, or personal growth. The five cards are typically arranged in a specific pattern, with each position holding a distinct meaning. The exact layout may vary depending on the reader’s intention, but a common structure includes past influences, present circumstances, hidden challenges, advice, and potential outcome.</p>
         <p>Each card in the five-card spread plays a crucial role in understanding the bigger picture. The first card represents the past, highlighting events or influences leading up to the current situation. The second card reflects the present, showing the energy or circumstances currently at play. The third card reveals hidden challenges, subconscious factors, or obstacles that may not be immediately obvious. The fourth card provides advice, suggesting possible actions or perspectives that could help navigate the situation. Finally, the fifth card represents the potential outcome, indicating where things may lead if current energies and actions remain unchanged.</p>
@@ -68,7 +91,10 @@
         <div>
             <h2><a href="./two.html">1-Card Daily Pull</a></h2>
         </div>
- 
+        <div>
+            <h2><a href="./landing.html">Home</a></h2>
+        </div>
+    </div>
     </div>
 </div>
 
